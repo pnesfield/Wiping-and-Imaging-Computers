@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+Downloads
+Documents
+
 # Distribution / packaging
 .Python
 build/
@@ -128,5 +131,24 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.Xauthority
+.bash_history
+.bash_logout
+.bashrc
+.cinnamon/
+.config/
+.gitconfig
+.gtkrc-2.0
+.gtkrc-xfce
+.java/
+.lesshst
+.linuxmint/
+.local/
+.mozilla/
+.profile
+.sudo_as_admin_successful
+.xsession-errors
+.xsession-errors.old
+.my-credentials
 .my_credentials
-.gitignore
+
