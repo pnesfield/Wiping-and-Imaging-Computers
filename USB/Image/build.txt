@@ -1,0 +1,51 @@
+Part18 Create a Linux PXE bootable image using debootstrap and chroot
+=====================================================================
+
+https://www.youtube.com/watch?v=CPrLyfxxe2A
+
+Setup a chroot image containing a minimal Linux OS to make it as small as possible - it will only be able to run bash scripts from a terminal. 
+
+cat /etc/os-release
+sudo apt-get install debootstrap
+ls /usr/share/debootstrap/scripts
+
+mkdir Image
+cd Image
+sudo debootstrap --arch=amd64 --variant=minbase focal chroot
+sudo ./mount_for_chroot.sh
+sudo chroot chroot
+
+mount_for_chroot.sh
+
+umount_for_chroot.sh
+
+Part19 Configure chroot to run wipe scripts and boot from the USB
+=================================================================
+
+https://www.youtube.com/watch?v=XBe-6-4cCQs
+
+Create a PXE bootable image to allow any disk connected to the computer to be wiped.
+
+Configure the chroot image to startup using /init, login as root and then run wipe scripts. 
+
+Create an initrd file. Using the USB created in Part 8, modify the grub menu to boot a linux kernel and the new initrd
+
+In the scripts change [CHANGEME1] to a greater than sign and [CHANGEME2] which are not allowed in youtube!!
+ 
+setup.sh
+
+init
+
+start.sh
+
+menu.sh
+
+erase_script.sh
+ Is a renamed copy of wipe.sh in Part 17 
+
+mk_image.sh
+
+grub.cfg
+
+Errata
+In the video at 5.50 the linux kernel was copied, it should be moved to save space, as it is not used in initrd. /chroot/boot can and should be empty

@@ -1,0 +1,172 @@
+Part 24 Legacy/BIOS and UEFI network booting Grub
+=================================================
+https://www.youtube.com/watch?v=plujEnt_bqc
+
+sudo  apt-get install grub-efi-amd64-signed
+sudo grub-mkimage -O i386-pc-pxe \
+    --output /var/server/grub/i386-pc/core.0 \
+    --prefix=grub \
+    -c grub-build.conf \
+    -d /usr/lib/grub/i386-pc/  \
+  pxe tftp
+
+sudo service isc-dhcp-server restart
+sudo service tftpd-hpa restart
+
+grub-build.conf
+============
+set root=(tftp)
+set net_default_server=192.168.0.1
+set prefix=grub
+
+part of dhcp.conf
+==============
+# Red subnet.
+subnet 192.168.0.0 netmask 255.255.255.0{
+  range 192.168.0.10 192.168.0.254;
+  option domain-name-servers 8.8.8.8, 8.8.4.4;
+# option domain-name "internal.example.org";
+  option subnet-mask 255.255.255.0;
+  option routers 192.168.0.1;
+  option broadcast-address 192.168.0.255;
+  default-lease-time 600;
+  max-lease-time 7200;
+  filename "grub/i386-pc/core.0";
+}
+
+class "UEFI-64-1" {
+  match if substring(option vendor-class-identifier, 15, 5) = "00007";
+      filename "grub/grubnetx64.efi";
+}
+
+Part 25 Create a network bootable Linux PXE image to run wipe scripts
+=====================================================================
+https://www.youtube.com/watch?v=xVrb9LZRX00
+
+Copy and Modify the chroot image created in Parts 18 & 19, create a PXE bootable Linux image to boot from the network and start Wipe scripts developed in Parts 17 and 21
+
+sudo ./mount_for_chroot.sh
+sudo chroot chroot
+
+Within chroot:
+apt-get install atftp
+apt-get install inetutils-ping
+
+sudo ./umount_for_chroot.sh
+exit
+
+These scripts are also available from git
+https://github.com/pnesfield/Wiping-and-Imaging-Computers
+
+start.sh
+
+mk_image.sh
+
+/var/server/grub/grub.cfg
+
+/var/server/grub/themes/linuxmint/theme.txt
+
+/var/server/wipe
+==============
+Contains vmlinuz, initrd, copy_files.sh and all the wipe scripts from Part21 and Part17, and splash.iso made in Part20
+
+copy_files.sh
+
+cat /etc/os-release
+sudo apt-get install debootstrap
+ls /usr/share/debootstrap/scripts
+
+mkdir Image
+cd Image
+sudo debootstrap --arch=amd64 --variant=minbase focal chroot
+
+sudo ./mount_for_chroot.sh
+sudo chroot chroot
+
+apt-get -y install atftp
+apt-get -y install inetutils-ping
+
+sudo ./umount_for_chroot.sh
+
+Part26 Speeding Up the boot process
+===================================
+
+https://www.youtube.com/watch?v=DwdUAAq9GGc
+
+tftp is the default network protocol to copy the bootable image. Http speeds up the process by a factor of 4. This video shows how, and tries both Apache2 and Nginx. Nginx proved to be faster in this application.
+
+apache2
+=======
+sudo apt-get -y install apache2 
+
+/etc/apache2/apache2.conf
+add:
+<Directory /var/server/>
+	Options Indexes FollowSymLinks
+	AllowOverride None
+	Require all granted
+</Directory>
+
+/etc/apache2/sites-enabled/000-default.conf
+change line 12:
+DocumentRoot /var/server
+
+nginx
+======
+sudo apt-get -y install nginx
+
+/etc/nginx/sites-enabled/default
+change line 41:
+	root /var/server;
+
+tftp client
+===========
+apt-get -y install atftp
+
+
+test_web.sh
+===========
+~/Server$ ./test_web.sh 
+tftp
+
+real	0m15.047s
+user	0m1.891s
+sys	0m8.812s
+apache2
+--2023-02-18 11:14:04--  http://192.168.0.1/wipe/initrd
+Connecting to 192.168.0.1:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 344776695 (329M)
+Saving to: ‘initrd’
+
+initrd              100%[===================>] 328.80M   579MB/s    in 0.6s    
+
+2023-02-18 11:14:05 (579 MB/s) - ‘initrd’ saved [344776695/344776695]
+
+
+real	0m0.572s
+user	0m0.080s
+sys	0m0.490s
+nginx
+--2023-02-18 11:14:06--  http://192.168.0.1/wipe/initrd
+Connecting to 192.168.0.1:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 344776695 (329M) [application/octet-stream]
+Saving to: ‘initrd’
+
+initrd              100%[===================>] 328.80M   661MB/s    in 0.5s    
+
+2023-02-18 11:14:06 (661 MB/s) - ‘initrd’ saved [344776695/344776695]
+
+
+real	0m0.501s
+user	0m0.064s
+sys	0m0.436s
+
+
+
+
+
+
+
+

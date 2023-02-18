@@ -1,0 +1,33 @@
+Part15 Wiping with hdparm on Linux
+==================================
+
+https://www.youtube.com/watch?v=4i3i_kzAM-g
+
+Installing Linux Mint from a USB as described in Part 8.
+Other distros are available.
+Install and use hdparm to secure-erase a disk
+
+Part16 Wiping using a bash script with hdparm
+=============================================
+
+https://www.youtube.com/watch?v=q-ZSo6EMQ7A
+
+A simple bash script to erase a disk using hdparm, demonstrating the steps required.
+- Unfreeze the disk when frozen
+- Set a password
+- Use hdparm to use ATA commands to secure-erase or enhanced-secure-erase a disk, and clear the password
+
+wipe2a.sh
+
+
+Part17 Wiping using an enhanced bash script using whiptail dialogs
+==================================================================
+
+https://www.youtube.com/watch?v=WjZp3Z9ys5k
+
+Using whiptail with bash to allow selection of drives to erase, choice of erasure by secure-erase or enhanced-secure-erase when available. Multiple drives handled by spawning and monitoring processes.
+
+This is an enhancement of the bash script in Part16, using whiptail dialogs
+
+wipe.sh
+
