@@ -49,3 +49,21 @@ grub.cfg
 
 Errata
 In the video at 5.50 the linux kernel was copied, it should be moved to save space, as it is not used in initrd. /chroot/boot can and should be empty
+
+Part21 Update Wipe script, writing a Splash Screen to an erased disk
+====================================================================
+
+https://www.youtube.com/watch?v=TazAJBH0rp8
+
+Updates to the wipe scripts to write a splash screen developed in Part 20 to the disk when erase has finished.
+
+disk_splash.sh
+
+finish.sh
+
+wipe_drive.sh
+See Part 17
+
+erase_script.sh
+
+

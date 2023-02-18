@@ -1,26 +1,69 @@
+Part22 Setup a dhcp network boot server - dhcp configuration
+============================================================
+
+https://www.youtube.com/watch?v=Dn9y70VUNRU&t=2s
+
+Set up a dhcp boot server for a network isolated from the company / office LAN. This will boot a client, provide a boot menu allowing the selection of wipe and install images for the PXE (Pre Execution Environment).
+
+This part describes the dhcp server configuration.
+
+Step 1
+sudo apt-get install isc-dhcp-server
+
+Step1 use ifconfig to identify the NIC for the wiping subnet
+
+Step 2 Configure the Network Interface to use a fixed ip address of 192.168.0.1 (or something more suiatable
+
+Step 3 Configure dhcp 
+/etc/default/isc-dhcp-server
+/etc/dhcp/dhcp.conf
+
+Step 4 Restart
+sudo service isc-dhcp-server start
+sudo service isc-dhcp-server status
+
+
+Part23 Setup a tftp network boot server - tftp configuration
+============================================================
+
+Set up a dhcp boot server for a network isolated from the company / office LAN. This will boot a client, provide a boot menu allowing the selection of wipe and install images for the PXE (Pre Execution Environment).
+
+This part describes the tftp server configuration.
+
+Step 1 Install a tftp server
+sudo apt-get install tftpd-hpa
+
+Step 2 Configure tftp server
+tftpd-hpa
+
+tftpd-remap.txt
+
+Step 3 Install grub
+sudo  apt-get install grub-efi-amd64-signed
+
+Step 4 Configure grub
+/var/server/grub/grub.cfg
+/var/server/grub/themes/linuxmint/theme.txt
+
+Step 5 Test UEFI boot into grub
+
 Part 24 Legacy/BIOS and UEFI network booting Grub
 =================================================
-https://www.youtube.com/watch?v=plujEnt_bqc
+Configure a network boot server to PXE boot Grub in both Legacy/BIOS and UEFI modes.
+Build Legacy/BIOS Grub image with grub-mkimage with custom configuration File 
 
-sudo  apt-get install grub-efi-amd64-signed
-sudo grub-mkimage -O i386-pc-pxe \
-    --output /var/server/grub/i386-pc/core.0 \
-    --prefix=grub \
-    -c grub-build.conf \
-    -d /usr/lib/grub/i386-pc/  \
-  pxe tftp
+Step 1 check grub is installed
+sudo  apt-get install grub-efi-amd64-signed 
 
-sudo service isc-dhcp-server restart
-sudo service tftpd-hpa restart
+Step 2 make a legacy/BIOS grub image core.0
+mk_image.sh
 
-grub-build.conf
-============
-set root=(tftp)
-set net_default_server=192.168.0.1
-set prefix=grub
+uses grub-build.conf
 
-part of dhcp.conf
-==============
+
+Step 3 Configure dhcp.conf to use core.0
+part of /etc/dhcp/dhcp.conf
+=======================
 # Red subnet.
 subnet 192.168.0.0 netmask 255.255.255.0{
   range 192.168.0.10 192.168.0.254;
@@ -38,6 +81,11 @@ class "UEFI-64-1" {
   match if substring(option vendor-class-identifier, 15, 5) = "00007";
       filename "grub/grubnetx64.efi";
 }
+
+Step 4 Restart Service
+sudo service isc-dhcp-server restart
+
+Step 5 Test Legacy/BIOS network boot
 
 Part 25 Create a network bootable Linux PXE image to run wipe scripts
 =====================================================================
