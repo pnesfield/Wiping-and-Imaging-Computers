@@ -4,6 +4,6 @@ sudo grub-mkimage -O i386-pc-pxe \
     --prefix=grub \
     -c grub-build.conf \
     -d /usr/lib/grub/i386-pc/  \
-  pxe tftp
+  boot priority_queue datetime bufio net tftp pxe
 
 

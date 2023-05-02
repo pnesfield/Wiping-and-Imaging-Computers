@@ -21,17 +21,6 @@ echo ""
 echo "Restarting nginx"
 sudo service nginx restart
 sudo service nginx status
-
-exit
-
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo "Restarting binlsrv for XP"
-sudo service binlsrv restart
-sudo service binlsrv status
 echo ""
 echo ""
 echo ""
@@ -42,6 +31,18 @@ sudo service smbd restart
 sudo service smbd status
 sudo service nmbd restart
 sudo service nmbd status
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo "Restarting django"
+sudo service django restart
+sudo service django status
+exit
+
+
+
 echo ""
 echo ""
 echo ""
@@ -58,12 +59,5 @@ echo ""
 echo "Restarting nfs-kernel-server"
 sudo service nfs-kernel-server restart
 sudo service nfs-kernel-server status
-echo ""
-echo ""
-echo ""
-echo ""
-echo ""
-echo "Restarting django"
-sudo service django restart
-sudo service django status
+
 
