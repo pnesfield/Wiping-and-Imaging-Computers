@@ -1,7 +1,7 @@
 Wiping and Imaging Computers
 ============================
 Files that are used and described in:
-[Wiping and Imaging Computers](https://www.youtube.com/watch?v=B0wdLjlHvmw&list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft)
+YouTube channel [Wiping and Imaging Computers](https://www.youtube.com/watch?v=B0wdLjlHvmw&list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft)
 
 [Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1)
 
