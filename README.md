@@ -1,7 +1,7 @@
 Wiping and Imaging Computers
 ============================
 Files that are used and described in:
-https://www.youtube.com/watch?v=B0wdLjlHvmw&list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft
+[Wiping and Imaging Computers](https://www.youtube.com/watch?v=B0wdLjlHvmw&list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft)
 
 Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 10 Image using DISM
 

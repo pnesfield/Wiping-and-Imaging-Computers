@@ -1,6 +1,0 @@
-#!/bin/sh
-. /etc/profile
-
-init=/sbin/init
-exec $init
-
