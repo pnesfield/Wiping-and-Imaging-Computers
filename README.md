@@ -2,7 +2,9 @@ Wiping and Imaging Computers
 ============================
 Files that are used and described in:
 [Wiping and Imaging Computers](https://www.youtube.com/watch?v=B0wdLjlHvmw&list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft)
+
 [Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1)
+
 Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 10 Image using DISM
 
 Part2 Wiping and Imaging Computers - Install Master Image and Add Drivers
