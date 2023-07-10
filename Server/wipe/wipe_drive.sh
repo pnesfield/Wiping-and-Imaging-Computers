@@ -20,7 +20,7 @@ sleep 10
 if [ $ok -eq 0 ]; then
   MYTIMEVAR=`date +'%k:%M:%S'`
   echo "disk $drive $ERASE_TYPE finished at $MYTIMEVAR"  >> $logfile.log
-  ./disk_splash.sh $drive $ERASE_CMD
+  # ./disk_splash.sh $drive $ERASE_CMD
 else
   echo  "ER hdparm returned error: $?" >> $logfile.log
   echo -e "Erase failed." >> $logfile.log
