@@ -49,26 +49,44 @@ Part21 Wiping and Imaging Computers. Update Wipe script, writing a Splash Screen
 
 Part22 Setup a dhcp network boot server - dhcp configuration
 
-Part 23 Setup a tftp network boot server - tftp configuration
+Part23 Setup a tftp network boot server - tftp configuration
 
-Part 24 Legacy/BIOS and UEFI network booting Grub
+Part24 Legacy/BIOS and UEFI network booting Grub
 
-Part 25 Create a network bootable Linux PXE image to run wipe scripts
+Part25 Create a network bootable Linux PXE image to run wipe scripts
 
-Part 26 Speeding Up the boot process
+Part26 Speeding Up the boot process
 
-Part 27 Booting WinPE in UEFI with iPXE
+Part27 Booting WinPE in UEFI with iPXE
 
-Part 28 Install Windows in PXE from a Share
+Part28 Install Windows in PXE from a Share
 
-Part 29 Configure Routing with NAT for Linux Server
+Part29 Configure Routing with NAT for Linux Server
 
-Part 30 Booting WinPE in Legacy BIOS with iPXE
+Part30 Booting WinPE in Legacy BIOS with iPXE
 
-Part 31 hyper-V Reference Images. Create PXE bootable VM in hyper-V
+Part31 hyper-V Reference Images. Create PXE bootable VM in hyper-V
 
-Part 32 Reference Images. Create linux based Hyper-V boot server with DHCP and TFTP
+Part32 Reference Images. Create linux based Hyper-V boot server with DHCP and TFTP
 
-Part 33 Create Virtual Machines as Reference machines, capture wim file with DISM from vhdx file
+Part33 Create Virtual Machines as Reference machines, capture wim file with DISM from vhdx file
 
+Part34 Wiping and Imaging Computers. Sanitizing the System after Imaging
 
+Part35 Weirdness and Gotchas
+
+Part36 Deploy new image
+
+Part37 Legacy/BIOS Booting Network with PXELinux
+
+Part38 Modifying startnet.cmd in boot.wim
+
+Part39 Deploy New Image to USBs
+
+Part40 Two ways to boot USB to WInPE with Grub
+
+Part41 Boot USB to WinPE with Ventoy
+
+Part42 Checking that disk is wiped or encrypted
+
+Part43 Deploying C++ to Winpe and testing DiskRead
