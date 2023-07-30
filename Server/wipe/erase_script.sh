@@ -1,7 +1,7 @@
 #!/bin/bash
 # Use secure erase or enhanced secure erase to wipe a disk
 DEBUG=
-version="1.3"
+version="1.4"
 brand="Secure Erase $version"
 
 drives=`lsblk -nio NAME,TYPE,TRAN,SIZE,MODEL | grep disk | grep -v usb | cut -f1 -d' '`
@@ -107,7 +107,7 @@ disk estimated time to erase:\n$ERASE_TIME\n\ndo you want to use $ERASE_TYPE" 20
   fi
   (./wipe_drive.sh $drive $ERASE_CMD &)
 done
-
+start=`date +%s`
 while true; do
   FINISHED=0
   clear
@@ -120,6 +120,9 @@ while true; do
     tail $logfile.log
     echo ""
   done
+  now=`date +%s`
+  runtime=$(((now-start)/60))
+  echo "Elapsed time $runtime minutes" 
   if [ $FINISHED == 0 ]; then
       break
   fi
@@ -127,4 +130,4 @@ while true; do
 done
 ./finish.sh
 read -p "Continue ?" ANS
-echo "Finished"
+echo "Finished in $runtime minutes"
