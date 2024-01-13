@@ -6,27 +6,27 @@ ERASE_CMD=$2
 echo "wipe_drive version 2.0" > $logfile
 if [[ $drive == *"nvme"* ]]; then
   echo "NVME drive /dev/$drive"  >> $logfile
-  ERASE_TYPE="NVME format -ses 1"
-  # STR_SERIAL=`lsblk -io SERIAL,TYPE /dev/$drive | grep " disk" | sed -e 's/ disk//' | sed -e 's/ //g'`
-  STR_SERIAL=`nvme list /dev/$drive -o json 2> /dev/null | grep Serial | awk -F":" '{print $2}' | sed -e 's/\"//g' | sed -e 's/,//'`
-  echo "SN $STR_SERIAL"  >> $logfile
-  echo "ET Unknown"  >> $logfile
-  echo "SE NVME Format"  >> $logfile
-  echo ""  >> $logfile
+  SECURE_ERASE_SETTING=1
+  ERASE_TYPE="NVME format -ses $SECURE_ERASE_SETTING"
+  SIZE=`lsblk -nio SIZE,TYPE /dev/$drive | grep disk | awk '{print $1}'`
+  SERIAL=`lsblk -io SERIAL,TYPE /dev/$drive | grep " disk" | sed -e 's/ disk//' | sed -e 's/ //g'`
+  MODEL=`lsblk -nio MODEL,TYPE /dev/$drive  | grep " disk" `
   MYTIMEVAR=`date +'%k:%M:%S'`
   echo "Format started at $MYTIMEVAR"  >> $logfile
+  echo "Model $MODEL Size $SIZE Serial $SERIAL"  >> $logfile
   echo "Standby..."  >> $logfile
-  RESULT=`nvme format /dev/$drive -ses $SECURE_ERASE_SETTING` 2>&1 > /dev/null
-  if [[ $RESULT == *Success* ]]; then
-    echo $RESULT
-    source ./disk_log.sh /dev/$drive $FILE "NVME Format ses $SECURE_ERASE_SETTING"
+  echo nvme format /dev/$drive -ses $SECURE_ERASE_SETTING >> $logfile
+  ./nvme format /dev/$drive -ses $SECURE_ERASE_SETTING 2>&1 >> $logfile
+  ok=$?
+  if [[ $ok == 0 ]]; then
+    #source ./disk_log.sh /dev/$drive $FILE "NVME Format ses $SECURE_ERASE_SETTING"
     #source ./disk_splash.sh /dev/$drive "NVME Format ses $SECURE_ERASE_SETTING"
     MYTIMEVAR=`date +'%k:%M:%S'`
     echo "      finished at $MYTIMEVAR"  >> $logfile
   else
-    echo  "ER nvme returned error:"  >> $logfile
-    echo $RESULT  >> $logfile
+    echo  "ERROR: nvme returned error: $ok"  >> $logfile
     echo -e "Erase failed. Check log $logfile"  >> $logfile
+    ./fail.sh
   fi  
 
 elif [[ $drive == *"mmc"* ]]; then
@@ -39,21 +39,37 @@ elif [[ $drive == *"mmc"* ]]; then
   MODEL=`udevadm info -a -n /dev/$drive | grep name  | awk -F"=" '{print $3}' | sed -e 's/"//g'`
   echo "MMC secure-erase started at $MYTIMEVAR"  >> $logfile
   echo "Model $MODEL Size $SIZE Serial $SERIAL"  >> $logfile
+  HEXTYPE=`./mmc extcsd read /dev/$drive | grep "REMOVAL_TYPE" | awk -F":" '{print $2}'`
   SECTORS=`blockdev --getsz /dev/$drive`
   LAST=$(($SECTORS - 1))
-  echo mmc erase secure-erase 0 $LAST /dev/$drive  2>&1 3>&1 >> $logfile
-  mmc erase secure-erase 0 $LAST /dev/$drive  2>&1 3>&1 >> $logfile
+  ERASE_TYPE="secure-erase"
+  echo mmc erase $ERASE_TYPE 0 $LAST /dev/$drive >> $logfile
+  ./mmc erase $ERASE_TYPE 0 $LAST /dev/$drive 2>&1 3>&1 >> $logfile
   ok=$?
   if [ $ok == 0 ]; then
     echo "Success"  >> $logfile
-    ERASE_TYPE="mmc secure-erase" 
     #source ./disk_log.sh $drive $FILE "$ERASE_TYPE"
     #source ./disk_splash.sh $drive $ERASE_TYPE
   elif [ $ok == 1 ]; then
-    echo "Failed: Secure Erase operation not supported"  >> $logfile
-    echo "Use nwipe."  >> $logfile
+    echo "Failed: $ERASE_TYPE operation not supported"  >> $logfile
+    ./fail.sh
+  elif [ $ok == 127 ]; then
+    echo "Failed: $ERASE_TYPE operation not supported"  >> $logfile
+    ERASE_TYPE="legacy"
+    echo mmc erase $ERASE_TYPE 0 $LAST /dev/$drive  2>&1 3>&1 >> $logfile
+    ./mmc erase $ERASE_TYPE 0 $LAST /dev/$drive  2>&1 3>&1 >> $logfile
+    ok=$?
+    if [ $ok == 0 ]; then
+      echo "Success"  >> $logfile
+      #source ./disk_log.sh $drive $FILE "$ERASE_TYPE"
+      #source ./disk_splash.sh $drive $ERASE_TYPE
+    else
+      echo "Failed: $ok"  >> $logfile
+      ./fail.sh
+    fi
   else
     echo "Failed: $ok"  >> $logfile
+    ./fail.sh
   fi
   MYTIMEVAR=`date +'%k:%M:%S'`
   echo "      finished at $MYTIMEVAR"  >> $logfile

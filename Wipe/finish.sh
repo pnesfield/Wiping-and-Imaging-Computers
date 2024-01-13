@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://manytools.org/hacker-tools/ascii-banner/
 green='\033[0;32m'
 off='\033[0;0m'
 echo -e "${green}

@@ -120,7 +120,7 @@ while true; do
   FINISHED=0
   clear
   for drive in $drives_selected; do
-    CHECK=`ps -ef | grep -c "wipe_drive.sh $drive $ERASE_CMD"`  
+    CHECK=`ps -ef | grep -c "wipe_drive.sh $drive"`  
     if [ $CHECK -ne 1 ]; then
       FINISHED=1
     fi
