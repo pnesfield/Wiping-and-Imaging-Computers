@@ -90,3 +90,10 @@ Part41 Boot USB to WinPE with Ventoy
 Part42 Checking that disk is wiped or encrypted
 
 Part43 Deploying C++ to Winpe and testing DiskRead
+
+Part44 Checking in WinPE that disks are wiped / erased prior to Imaging
+
+Part45 Wiping / Erasing eMMC disks with Wipe Script
+
+Part46 Wiping / Erasing NVME disks with Wipe Script
+
