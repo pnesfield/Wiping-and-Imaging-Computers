@@ -16,18 +16,19 @@ if [[ $drive == *"nvme"* ]]; then
   echo "Model $MODEL Size $SIZE Serial $SERIAL"  >> $logfile
   echo "Standby..."  >> $logfile
   echo nvme format /dev/$drive -ses $SECURE_ERASE_SETTING >> $logfile
-  ./nvme format /dev/$drive -ses $SECURE_ERASE_SETTING 2>&1 >> $logfile
+  ./nvme format /dev/$drive -ses $SECURE_ERASE_SETTING >> $logfile  2>&1  3>&1
   ok=$?
   if [[ $ok == 0 ]]; then
+    echo "Success"  >> $logfile
     #source ./disk_log.sh /dev/$drive $FILE "NVME Format ses $SECURE_ERASE_SETTING"
     #source ./disk_splash.sh /dev/$drive "NVME Format ses $SECURE_ERASE_SETTING"
-    MYTIMEVAR=`date +'%k:%M:%S'`
-    echo "      finished at $MYTIMEVAR"  >> $logfile
   else
     echo  "ERROR: nvme returned error: $ok"  >> $logfile
-    echo -e "Erase failed. Check log $logfile"  >> $logfile
-    ./fail.sh
-  fi  
+    echo "Erase failed. Check log $logfile"  >> $logfile
+    ./fail.sh  >> $logfile
+  fi
+  MYTIMEVAR=`date +'%k:%M:%S'`
+  echo "      finished at $MYTIMEVAR"  >> $logfile 
 
 elif [[ $drive == *"mmc"* ]]; then
   MYTIMEVAR=`date +'%k:%M:%S'`
@@ -44,7 +45,7 @@ elif [[ $drive == *"mmc"* ]]; then
   LAST=$(($SECTORS - 1))
   ERASE_TYPE="secure-erase"
   echo mmc erase $ERASE_TYPE 0 $LAST /dev/$drive >> $logfile
-  ./mmc erase $ERASE_TYPE 0 $LAST /dev/$drive 2>&1 3>&1 >> $logfile
+  ./mmc erase $ERASE_TYPE 0 $LAST /dev/$drive >> $logfile 2>&1 3>&1
   ok=$?
   if [ $ok == 0 ]; then
     echo "Success"  >> $logfile
@@ -56,8 +57,8 @@ elif [[ $drive == *"mmc"* ]]; then
   elif [ $ok == 127 ]; then
     echo "Failed: $ERASE_TYPE operation not supported"  >> $logfile
     ERASE_TYPE="legacy"
-    echo mmc erase $ERASE_TYPE 0 $LAST /dev/$drive  2>&1 3>&1 >> $logfile
-    ./mmc erase $ERASE_TYPE 0 $LAST /dev/$drive  2>&1 3>&1 >> $logfile
+    echo mmc erase $ERASE_TYPE 0 $LAST /dev/$drive >> $logfile 2>&1 3>&1
+    ./mmc erase $ERASE_TYPE 0 $LAST /dev/$drive >> $logfile 2>&1 3>&1
     ok=$?
     if [ $ok == 0 ]; then
       echo "Success"  >> $logfile
@@ -65,11 +66,11 @@ elif [[ $drive == *"mmc"* ]]; then
       #source ./disk_splash.sh $drive $ERASE_TYPE
     else
       echo "Failed: $ok"  >> $logfile
-      ./fail.sh
+      ./fail.sh   >> $logfile
     fi
   else
     echo "Failed: $ok"  >> $logfile
-    ./fail.sh
+    ./fail.sh   >> $logfile
   fi
   MYTIMEVAR=`date +'%k:%M:%S'`
   echo "      finished at $MYTIMEVAR"  >> $logfile
@@ -95,6 +96,7 @@ else
   else
     echo  "ER hdparm returned error: $?" >> $logfile
     echo -e "Erase failed." >> $logfile
+    ./fail.sh   >> $logfile
   fi
 fi
 

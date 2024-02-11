@@ -125,7 +125,7 @@ while true; do
       FINISHED=1
     fi
     logfile=$drive
-    tail $logfile.log
+    cat $logfile.log
     echo ""
   done
   if [ $FINISHED == 0 ]; then
