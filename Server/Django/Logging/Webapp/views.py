@@ -12,6 +12,7 @@ logger = logging.getLogger(__name__)
 def asset(request):
     return_message = ""
     if request.method == 'POST':
+        #serial = str(urllib.parse.unquote(request.body))
         serial = request.body.decode()
         if debug: logger.warning("Lookup " + serial)
         try:
@@ -31,9 +32,9 @@ def log(request):
     try:
         return_message = "OK"
         if request.method == 'POST':
-            if debug: logger.warning(request.body)
+            #body = str(urllib.parse.unquote(request.body))
             body = request.body.decode()
-            logger.warning(body)
+            if debug: logger.warning(body)
             lines = body.splitlines()
             logger.warning(len(lines))
             if not lines[0].startswith("Asset"):
