@@ -1,5 +1,6 @@
 #!/bin/bash
 DEBUG=$false
+url=$1
 url="http://RedDev1:8000"
 source wipelib.sh
 SERIAL=$(dmidecode -s system-serial-number)

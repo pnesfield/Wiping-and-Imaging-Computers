@@ -4,7 +4,7 @@ function getAsset() {
   ASSET=$1
   while [ true ]
   do
-    RESULT=$(whiptail --title "$brand" --inputbox "Please enter the asset number (double check your entry please):" 8 78 $ASSET --title "$brand" 3>&1 1>&2 2>&3)
+    RESULT=$(whiptail --title "$brand" --inputbox "Please enter the asset number (double check your entry):" 8 78 $ASSET --title "$brand" 3>&1 1>&2 2>&3)
     exitstatus=$?
     if [ $exitstatus != 0 ]; then
       sleep 5

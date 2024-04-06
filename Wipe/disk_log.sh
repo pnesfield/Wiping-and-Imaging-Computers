@@ -1,6 +1,6 @@
 #!/bin/bash
 #disk_log.sh /dev/sda 00005499 "Enhanced Secure Erase" http://RedDev1:8000
-DEBUG=$true
+DEBUG=$false
 DEV=$1
 ASSET=$2
 ERASE_TYPE=$3
