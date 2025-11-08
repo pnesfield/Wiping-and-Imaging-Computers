@@ -47,7 +47,7 @@ Part20 Wiping and Imaging Computers. Modifying a bootable .ISO file using xorris
 
 Part21 Wiping and Imaging Computers. Update Wipe script, writing a Splash Screen to an erased disk
 
-Part22 Setup a dhcp network boot server - dhcp configuration
+Part22 Setup a dhcp network boot server - dhcp configuration https://www.youtube.com/watch?v=Dn9y70VUNRU
 
 Part23 Setup a tftp network boot server - tftp configuration
 
