@@ -9,7 +9,7 @@ Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 1
 
 Part2 Wiping and Imaging Computers - Install Master Image and Add Drivers
 
-Part3 Wiping and Imaging Computers  - Install Drivers
+Part3 Wiping and Imaging Computers  - Install Drivers https://www.youtube.com/watch?v=0X0ZbmlqskE 
 
 Part4 Wiping and Imaging Computers  - Add Drivers to WinPE
 
