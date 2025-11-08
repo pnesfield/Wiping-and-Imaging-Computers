@@ -5,35 +5,35 @@ YouTube channel [Wiping and Imaging Computers](https://www.youtube.com/watch?v=B
 
 [Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1)
 
-Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 10 Image using DISM
+Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 10 Image using DISM https://www.youtube.com/watch?v=B0wdLjlHvmw
 
-Part2 Wiping and Imaging Computers - Install Master Image and Add Drivers
+Part2 Wiping and Imaging Computers - Install Master Image and Add Drivers https://www.youtube.com/watch?v=ZGvF3Bj-0Mc
 
 Part3 Wiping and Imaging Computers  - Install Drivers https://www.youtube.com/watch?v=0X0ZbmlqskE 
 
-Part4 Wiping and Imaging Computers  - Add Drivers to WinPE
+Part4 Wiping and Imaging Computers  - Add Drivers to WinPE https://www.youtube.com/watch?v=Kl07CuJaeMM
 
-Part5 Wiping and Imaging Computers  - Add Drivers to WinPE boot.wim using DISM
+Part5 Wiping and Imaging Computers  - Add Drivers to WinPE boot.wim using DISM https://www.youtube.com/watch?v=bGDtoFNLBFU
 
-Part6 Wiping and Imaging Computers  - Create a bootable USB with Diskpart
+Part6 Wiping and Imaging Computers  - Create a bootable USB with Diskpart https://www.youtube.com/watch?v=MxRU0CJUDAg
 
 Part7 Wiping and Imaging Computers. Connect to Share in WinPE with Ethernet cable and wifi
 
-Part8 Wiping and Imaging Computers. Create bootable USB (BIOS and UEFI) using Grub
+Part8 Wiping and Imaging Computers. Create bootable USB (BIOS and UEFI) using Grub https://www.youtube.com/watch?v=oqeh-BnGe9o
 
 Part9 Wiping and Imaging Computers. Grub bootable USB, add WinPE to menu for BIOS and UEFI modes
 
-Part10 Wiping and Imaging Computers. Grub bootable USB, add themes
+Part10 Wiping and Imaging Computers. Grub bootable USB, add themes https://www.youtube.com/watch?v=awbK-9QFBr4
 
-Part11 Wiping and Imaging Computers. Secure Boot with Grub and Microsoft USBs
+Part11 Wiping and Imaging Computers. Secure Boot with Grub and Microsoft USBs https://www.youtube.com/watch?v=0bwWrugnuyI
 
-Part12 Wiping and Imaging Computers. Making a disk unreadable, Encryption is the best solution.
+Part12 Wiping and Imaging Computers. Making a disk unreadable, Encryption is the best solution. https://www.youtube.com/watch?v=g48iExObiGI
 
 Part13 Wiping and Imaging Computers. WinPE checking if the computer's disks are encrypted
 
-Part14 Wiping and Imaging Computers. Imaging encrypted disks
+Part14 Wiping and Imaging Computers. Imaging encrypted disks https://www.youtube.com/watch?v=pE35_PPaNuM
 
-Part15 Wiping and Imaging Computers. Wiping with hdparm on Linux
+Part15 Wiping and Imaging Computers. Wiping with hdparm on Linux https://www.youtube.com/watch?v=4i3i_kzAM-g
 
 Part16 Wiping and Imaging Computers. Wiping using a bash script with hdparm
 
