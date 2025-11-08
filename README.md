@@ -5,7 +5,7 @@ YouTube channel [Wiping and Imaging Computers](https://www.youtube.com/watch?v=B
 
 [Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1)
 
-Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 10 Image using DISM https://www.youtube.com/watch?v=B0wdLjlHvmw
+Part1 Wiping and Imaging Computers  - Overview and Capture of a Master Windows 10 Image using DISM (https://www.youtube.com/watch?v=B0wdLjlHvmw)
 
 Part2 Wiping and Imaging Computers - Install Master Image and Add Drivers https://www.youtube.com/watch?v=ZGvF3Bj-0Mc
 
@@ -49,15 +49,17 @@ Part21 Wiping and Imaging Computers. Update Wipe script, writing a Splash Screen
 
 Part22 Setup a dhcp network boot server - dhcp configuration https://www.youtube.com/watch?v=Dn9y70VUNRU
 
-Part23 Setup a tftp network boot server - tftp configuration
+Part23 Setup a tftp network boot server - tftp configuration https://www.youtube.com/watch?v=i2OPOmaabbQ 
+
+Part23 bis Setup a bootp server using DNSMASQ with proxy DHCP https://www.youtube.com/watch?v=fWyyQ5SKQAE
 
 Part24 Legacy/BIOS and UEFI network booting Grub
 
 Part25 Create a network bootable Linux PXE image to run wipe scripts
 
-Part26 Speeding Up the boot process
+Part26 Speeding Up the boot process https://www.youtube.com/watch?v=DwdUAAq9GGc
 
-Part27 Booting WinPE in UEFI with iPXE
+Part27 Booting WinPE in UEFI with iPXE https://www.youtube.com/watch?v=LvUHBL3KFpw
 
 Part28 Install Windows in PXE from a Share
 
