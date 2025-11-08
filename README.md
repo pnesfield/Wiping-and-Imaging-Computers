@@ -17,7 +17,7 @@ This series of youtube videos show how to
 14. Send wiped / imaged data to a inventory management system
 
 Files that are used and described in:
-YouTube channel [Wiping and Imaging Computers](https://www.youtube.com/watch?v=B0wdLjlHvmw&list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft)
+YouTube channel https://studio.youtube.com/playlist/PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft/videos
 
 [Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1) to the TouTube Channel
 
