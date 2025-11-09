@@ -17,25 +17,25 @@ This series of youtube videos show how to
 14. Send wiped / imaged data to a inventory management system
 
 Files that are used and described in:
-YouTube [Channel]( https://studio.youtube.com/playlist/PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft/videos) 
+YouTube [Channel]( https://www.youtube.com/playlist?list=PLva258t-0AhzxRBGW-IaGmlmDIgnmjdft) 
 
-[Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1) to the TouTube Channel
+[Subscribe](http://youtube.com/@pnesfield?sub_confirmation=1) to the YouTube Channel
 
-Part1 Overview and Capture of a Master Windows 10 Image using DISM https://www.youtube.com/watch?v=B0wdLjlHvmw
+[Part1 Overview and Capture of a Master Windows 10 Image using DISM](https://www.youtube.com/watch?v=B0wdLjlHvmw)
 
-Part2 Install Master Image and Add Drivers https://www.youtube.com/watch?v=ZGvF3Bj-0Mc
+[Part2 Install Master Image and Add Drivers](https://www.youtube.com/watch?v=ZGvF3Bj-0Mc)
 
-Part3 Install Drivers https://www.youtube.com/watch?v=0X0ZbmlqskE 
+[Part3 Install Drivers](https://www.youtube.com/watch?v=0X0ZbmlqskE)
 
-Part4 Add Drivers to WinPE https://www.youtube.com/watch?v=Kl07CuJaeMM
+[Part4 Add Drivers to WinPE](https://www.youtube.com/watch?v=Kl07CuJaeMM)
 
-Part5 Add Drivers to WinPE boot.wim using DISM https://www.youtube.com/watch?v=bGDtoFNLBFU
+[Part5 Add Drivers to WinPE boot.wim using DISM](https://www.youtube.com/watch?v=bGDtoFNLBFU)
 
-Part6 Create a bootable USB with Diskpart https://www.youtube.com/watch?v=MxRU0CJUDAg
+[Part6 Create a bootable USB with Diskpart](https://www.youtube.com/watch?v=MxRU0CJUDAg)
 
 Part7 Connect to Share in WinPE with Ethernet cable and wifi
 
-Part8 Create bootable USB (BIOS and UEFI) using Grub https://www.youtube.com/watch?v=oqeh-BnGe9o
+[Part8 Create bootable USB (BIOS and UEFI) using Grub](https://www.youtube.com/watch?v=oqeh-BnGe9o)
 
 Part9 Grub bootable USB, add WinPE to menu for BIOS and UEFI modes
 
