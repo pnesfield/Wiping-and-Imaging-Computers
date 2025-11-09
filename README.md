@@ -1,8 +1,8 @@
 Wiping and Imaging Computers
 ============================
 This series of youtube videos show how to 
-1. Wipe disks using the hardware secure erase functions, (part of the SATA disk functions), to secure erase or wipe a disk
-2. Create a Linux image to boot into Pre-Execution Environment using chroot (Part18), add a script to manage hdparm to erase a disk (Part15, 16 and 17)
+1. Wipe disks using the hardware secure erase functions, (part of the SATA disk functions), to secure erase a disk using hdparp (Part 15)
+2. Create a Linux image to boot into Pre-Execution Environment using chroot (Part18), add a script to manage hdparm to erase a disk (Parts 16 and 17)
 3. Erase eMMC and NVME disks using SATA commands (Parts 45 and 46)
 4. Write a Splash screen after erasure, so when a disk boots it dispays a message such as "Erased on dd/mm/yy using xxx" (Part 21)
 5. Create reference Windows 10/11 images on hyper-V, capture and deploy them (Part 31)
