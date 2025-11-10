@@ -1,15 +1,15 @@
 Wiping and Imaging Computers
 ============================
 This series of youtube videos show how to 
-1. Wipe disks using the hardware secure erase functions, (part of the SATA disk functions), to secure erase a disk using hdparp (Part 15)
-2. Create a Linux image to boot into Pre-Execution Environment using chroot (Part18), add a script to manage hdparm to erase a disk (Parts 16 and 17)
+1. Wipe disks using the hardware secure erase functions, (part of the SATA disk functions), to secure erase a disk using hdparm (Part 15)
+2. Create a Linux image to boot into Pre-Execution Environment using chroot (Part18), add a script to manage hdparm and erase a disk (Parts 16 and 17)
 3. Erase eMMC and NVME disks using SATA commands (Parts 45 and 46)
 4. Write a Splash screen after erasure, so when a disk boots it dispays a message such as "Erased on dd/mm/yy using xxx" (Part 21)
 5. Create reference Windows 10/11 images on hyper-V, capture and deploy them (Part 31)
-6. Setup an infrastructure in Linux (ISC dhcp, tftp, nginx, samba) to network boot into Windows Pre-Execution Environment using PXELinux for Legacy, Grub and iPXE for UEFI
-7. Setup a Boot system with Proxy DHCP using DNSMASQ - usable on the office LAN (Part 23-bis)
-8. Setup the boot server to provide internet service to the install environment for Windows Update and Drivers
-9. Extract a boot.wim file for WinPE from the Recovery Environment
+6. Setup a workshop Network Boot system (ISC dhcp, tftp, nginx, samba) to network boot into Windows Pre-Execution Environment (Parts 22, 23 and 28)
+7. Setup a Network Boot system with Proxy DHCP using DNSMASQ - usable on the office LAN (Part 23-bis)
+8. Setup the boot server to provide routing of an internet service for the install environment Windows Update and Drivers
+9. Extract a boot.wim file for WinPE from the Recovery Environment (Part 52)
 10. Use Wifi in WinPE
 11. Modify boot.wim startnet.cmd to display a menu in WinPE
 12. Adding Drivers, Powershell to boot.wim
@@ -35,7 +35,7 @@ YouTube [Channel]( https://www.youtube.com/playlist?list=PLva258t-0AhzxRBGW-IaGm
 
 [Part6 Create a bootable USB with Diskpart](https://www.youtube.com/watch?v=MxRU0CJUDAg)
 
-Part7 Connect to Share in WinPE with Ethernet cable and wifi
+[Part7 Connect to a Share from WinPE with Ethernet cable and wifi](https://youtu.be/uuDAeKaCqzM)
 
 [Part8 Create bootable USB (BIOS and UEFI) using Grub](https://www.youtube.com/watch?v=oqeh-BnGe9o)
 
@@ -43,15 +43,15 @@ Part9 Grub bootable USB, add WinPE to menu for BIOS and UEFI modes
 
 Part10 Grub bootable USB, add themes https://www.youtube.com/watch?v=awbK-9QFBr4
 
-Part11 Secure Boot with Grub and Microsoft USBs https://www.youtube.com/watch?v=0bwWrugnuyI
+[Part11 Secure Boot with Grub and Microsoft USBs](https://www.youtube.com/watch?v=0bwWrugnuyI)
 
-Part12 Making a disk unreadable, Encryption is the best solution. https://www.youtube.com/watch?v=g48iExObiGI
+[Part12 Making a disk unreadable, Encryption is the best solution](https://www.youtube.com/watch?v=g48iExObiGI)
 
-Part13 WinPE checking if the computer's disks are encrypted https://www.youtube.com/watch?v=Z0HSpfs8XL8
+[Part13 WinPE checking if the computer's disks are encrypted](https://www.youtube.com/watch?v=Z0HSpfs8XL8)
 
-Part14 Imaging encrypted disks https://www.youtube.com/watch?v=pE35_PPaNuM
+[Part14 Imaging encrypted disks](https://www.youtube.com/watch?v=pE35_PPaNuM)
 
-Part15 Wiping with hdparm on Linux https://www.youtube.com/watch?v=4i3i_kzAM-g
+[Part15 Wiping with hdparm on Linux](https://www.youtube.com/watch?v=4i3i_kzAM-g)
 
 Part16 Wiping using a bash script with hdparm
 
@@ -65,27 +65,27 @@ Part20 Modifying a bootable .ISO file using xorriso
 
 Part21 Update Wipe script, writing a Splash Screen to an erased disk
 
-Part22 Setup a dhcp network boot server - dhcp configuration https://www.youtube.com/watch?v=Dn9y70VUNRU
+[Part22 Setup a dhcp network boot server - dhcp configuration](https://www.youtube.com/watch?v=Dn9y70VUNRU)
 
-Part23 Setup a tftp network boot server - tftp configuration https://www.youtube.com/watch?v=i2OPOmaabbQ 
+[Part23 Setup a tftp network boot server - tftp configuration](https://www.youtube.com/watch?v=i2OPOmaabbQ)
 
-Part23-bis Setup a bootp server using DNSMASQ with proxy DHCP https://www.youtube.com/watch?v=fWyyQ5SKQAE
+[Part23-bis Setup a bootp server using DNSMASQ with proxy DHCP](https://www.youtube.com/watch?v=fWyyQ5SKQAE)
 
 Part24 Legacy/BIOS and UEFI network booting Grub
 
 Part25 Create a network bootable Linux PXE image to run wipe scripts
 
-Part26 Using http to Speed up booting in Grub by 4Xhttps://www.youtube.com/watch?v=DwdUAAq9GGc
+[Part26 Using http to Speed up booting in Grub by 4X](https://www.youtube.com/watch?v=DwdUAAq9GGc)
 
-Part27 Booting WinPE in UEFI with iPXE https://www.youtube.com/watch?v=LvUHBL3KFpw
+[Part27 Booting WinPE in UEFI with iPXE](https://www.youtube.com/watch?v=LvUHBL3KFpw)
 
 Part28 Install Windows in PXE from a Share
 
-Part29 Configure Routing with NAT for Linux Server
+[Part29 Configure Routing for Linux Server to provide internet services](https://youtu.be/27C-hiwOit4)
 
 Part30 Booting WinPE in Legacy BIOS with iPXE
 
-Part31 hyper-V Reference Images. Create PXE bootable VM in hyper-V https://youtu.be/VaGyNHbEq2s
+[Part31 hyper-V Reference Images. Create PXE bootable VM in hyper-V](https://youtu.be/VaGyNHbEq2s)
 
 Part32 Reference Images. Create linux based Hyper-V boot server with DHCP and TFTP
 
@@ -99,17 +99,17 @@ Part36 Deploy new image
 
 Part37 Legacy/BIOS Booting Network with PXELinux
 
-Part38 Modifying startnet.cmd in boot.wim https://youtu.be/iTahQpIFiuQ
+[Part38 Modifying startnet.cmd in boot.wim](https://youtu.be/iTahQpIFiuQ)
 
 Part39 Deploy New Image to USBs
 
-Part40 Two ways to boot USB to WInPE with Grub https://youtu.be/8I4jPYtftyM
+[Part40 Two ways to boot USB to WInPE with Grub](https://youtu.be/8I4jPYtftyM)
 
-Part41 Boot USB to WinPE with Ventoy https://www.youtube.com/watch?v=wBFgagpiW2k
+[Part41 Boot USB to WinPE with Ventoy](https://www.youtube.com/watch?v=wBFgagpiW2k)
 
-Part42 Checking that disk is wiped or encrypted https://www.youtube.com/watch?v=XMRejThjHZY
+[Part42 Checking that disk is wiped or encrypted](https://www.youtube.com/watch?v=XMRejThjHZY)
 
-Part43 Deploying C++ to Winpe and testing DiskRead https://www.youtube.com/watch?v=P0zMOjdWzE0
+[Part43 Deploying C++ to Winpe and testing DiskRead](https://www.youtube.com/watch?v=P0zMOjdWzE0)
 
 Part44 Checking in WinPE that disks are wiped / erased prior to Imaging
 
@@ -119,14 +119,14 @@ Part46 Wiping / Erasing NVME disks with Wipe Script
 
 Part47 Using iSCSI as a High Speed Shared Data Source 
 
-Part48 Using Django to log wiping and imaging events. Setup in Windows https://www.youtube.com/watch?v=L8bw1bGpYzo
+[Part48 Using Django to log wiping and imaging events. Setup in Windows](https://www.youtube.com/watch?v=L8bw1bGpYzo)
 
-Part50 Using Django to log Wiping and Imaging Events. Setup in Linux https://www.youtube.com/watch?v=HKCnrqdqvbc
+[Part50 Using Django to log Wiping and Imaging Events. Setup in Linux](https://www.youtube.com/watch?v=HKCnrqdqvbc)
 
-Part49 Sending Imaging Events to Django from Windows using Powershell https://youtu.be/HKzFlarJirY
+[Part49 Sending Imaging Events to Django from Windows using Powershell](https://youtu.be/HKzFlarJirY)
 
-Part51 Sending Wiping Events to Django from Linux using Bash https://youtu.be/WmDMEX0Oc3Q
+[Part51 Sending Wiping Events to Django from Linux using Bash](https://youtu.be/WmDMEX0Oc3Q)
 
-Part52 Using Windows Recovery winRE to boot to a command prompt in Windows Pre-execution Environment https://www.youtube.com/watch?v=pFfTytDX1w0
+[Part52 Using Windows Recovery winRE to boot to a command prompt in Windows Pre-execution Environment](https://www.youtube.com/watch?v=pFfTytDX1w0)
 
-Part53 Adding Powershell to winRE https://www.youtube.com/watch?v=XuvnDemFRk0
+[Part53 Adding Powershell to winRE](https://www.youtube.com/watch?v=XuvnDemFRk0)
