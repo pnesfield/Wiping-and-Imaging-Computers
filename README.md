@@ -57,7 +57,7 @@ Part16 Wiping using a bash script with hdparm
 
 Part17 Wiping using an enhanced bash script using whiptail dialogs
 
-Part18 Create a Linux PXE bootable image using debootstrap and chroot
+[Part18 Create a Linux PXE bootable image using debootstrap and chroot](https://youtu.be/CPrLyfxxe2A)
 
 Part19 Configure chroot to run wipe scripts and boot from the USB
 
@@ -79,7 +79,7 @@ Part25 Create a network bootable Linux PXE image to run wipe scripts
 
 [Part27 Booting WinPE in UEFI with iPXE](https://www.youtube.com/watch?v=LvUHBL3KFpw)
 
-Part28 Install Windows in PXE from a Share
+[Part28 Install Windows in PXE from a Samba Share](https://youtu.be/4KwKPhIYOZk)
 
 [Part29 Configure Routing for Linux Server to provide internet services](https://youtu.be/27C-hiwOit4)
 
@@ -91,17 +91,17 @@ Part32 Reference Images. Create linux based Hyper-V boot server with DHCP and TF
 
 Part33 Create Virtual Machines as Reference machines, capture wim file with DISM from vhdx file
 
-Part34 Sanitizing the System after Imaging
+[Part34 Sanitizing the System after Imaging - post install script](https://youtu.be/a90bKTtY1kY)
 
-Part35 Weirdness and Gotchas
+[Part35 Weirdness and Gotchas](https://youtu.be/TvE-QW-vu2k)
 
-Part36 Deploy new image
+[Part36 Deploy new image to the Server without disturbing the installs currently in progress. This is done by having  2 versions of the image, Live and Test.](https://youtu.be/yJJupbq1l0k)
 
-Part37 Legacy/BIOS Booting Network with PXELinux
+[Part37 Legacy/BIOS Booting Network with PXELinux](https://youtu.be/wfSFvOxEg3o)
 
 [Part38 Modifying startnet.cmd in boot.wim](https://youtu.be/iTahQpIFiuQ)
 
-Part39 Deploy New Image to USBs
+[Part39 Deploy New Image to USBs](https://youtu.be/Y_07OWeugOc)
 
 [Part40 Two ways to boot USB to WInPE with Grub](https://youtu.be/8I4jPYtftyM)
 
@@ -111,13 +111,13 @@ Part39 Deploy New Image to USBs
 
 [Part43 Deploying C++ to Winpe and testing DiskRead](https://www.youtube.com/watch?v=P0zMOjdWzE0)
 
-Part44 Checking in WinPE that disks are wiped / erased prior to Imaging
+[Part44 Checking in WinPE that disks are wiped / erased prior to Imaging](https://youtu.be/oJ7Qo91fvi8)
 
-Part45 Wiping / Erasing eMMC disks with Wipe Script
+[Part45 Wiping / Erasing eMMC disks with Wipe Script](https://youtu.be/P_2FdEVyubs)
 
-Part46 Wiping / Erasing NVME disks with Wipe Script
+[Part46 Wiping / Erasing NVME disks with Wipe Script](https://youtu.be/9t79RMVLIwg)
 
-Part47 Using iSCSI as a High Speed Shared Data Source 
+[Part47 Using iSCSI as a High Speed Shared Data Source](https://youtu.be/Ijtx5AlEDAs)
 
 [Part48 Using Django to log wiping and imaging events. Setup in Windows](https://www.youtube.com/watch?v=L8bw1bGpYzo)
 
