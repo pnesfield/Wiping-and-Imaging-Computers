@@ -2,7 +2,7 @@ Wiping and Imaging Computers
 ============================
 This series of youtube videos show how to 
 1. Wipe disks using the hardware secure erase functions, (part of the SATA disk functions), to secure erase a disk using hdparm (Part 15)
-2. Create a Linux image to boot into Pre-Execution Environment using chroot (Part18), add a script to manage hdparm and erase a disk (Parts 16 and 17)
+2. Create a Linux image to boot into Pre-Execution Environment using chroot (Part18), add a script to manage hdparm and erase a disk (Parts 16, 17 and 26)
 3. Erase eMMC and NVME disks using SATA commands (Parts 45 and 46)
 4. Write a Splash screen after erasure, so when a disk boots it dispays a message such as "Erased on dd/mm/yy using xxx" (Part 21)
 5. Create reference Windows 10/11 images on hyper-V, capture and deploy them (Part 31)
@@ -39,9 +39,9 @@ YouTube [Channel]( https://www.youtube.com/playlist?list=PLva258t-0AhzxRBGW-IaGm
 
 [Part8 Create bootable USB (BIOS and UEFI) using Grub](https://www.youtube.com/watch?v=oqeh-BnGe9o)
 
-Part9 Grub bootable USB, add WinPE to menu for BIOS and UEFI modes
+[Part9 Grub bootable USB, add WinPE to menu for BIOS and UEFI modes](https://youtu.be/4mPJZ2_2otk)
 
-Part10 Grub bootable USB, add themes https://www.youtube.com/watch?v=awbK-9QFBr4
+[Part10 Grub bootable USB, add themes](https://www.youtube.com/watch?v=awbK-9QFBr4)
 
 [Part11 Secure Boot with Grub and Microsoft USBs](https://www.youtube.com/watch?v=0bwWrugnuyI)
 
@@ -53,17 +53,17 @@ Part10 Grub bootable USB, add themes https://www.youtube.com/watch?v=awbK-9QFBr4
 
 [Part15 Wiping with hdparm on Linux](https://www.youtube.com/watch?v=4i3i_kzAM-g)
 
-Part16 Wiping using a bash script with hdparm
+[Part16 Wiping using a bash script with hdparm](https://youtu.be/q-ZSo6EMQ7A)
 
-Part17 Wiping using an enhanced bash script using whiptail dialogs
+[Part17 Wiping using an enhanced bash script using whiptail dialogs](https://youtu.be/WjZp3Z9ys5k)
 
 [Part18 Create a Linux PXE bootable image using debootstrap and chroot](https://youtu.be/CPrLyfxxe2A)
 
-Part19 Configure chroot to run wipe scripts and boot from the USB
+[Part19 Configure chroot to run wipe scripts and boot from the USB](https://youtu.be/XBe-6-4cCQs)
 
-Part20 Modifying a bootable .ISO file using xorriso
+[Part20 Modifying a bootable .ISO file using xorriso](https://youtu.be/mG0sSt_qwCg)
 
-Part21 Update Wipe script, writing a Splash Screen to an erased disk
+[Part21 Update Wipe script, writing a Splash Screen to an erased disk](https://youtu.be/TazAJBH0rp8)
 
 [Part22 Setup a dhcp network boot server - dhcp configuration](https://www.youtube.com/watch?v=Dn9y70VUNRU)
 
@@ -71,9 +71,9 @@ Part21 Update Wipe script, writing a Splash Screen to an erased disk
 
 [Part23-bis Setup a bootp server using DNSMASQ with proxy DHCP](https://www.youtube.com/watch?v=fWyyQ5SKQAE)
 
-Part24 Legacy/BIOS and UEFI network booting Grub
+[Part24 Legacy/BIOS and UEFI network booting Grub](https://youtu.be/plujEnt_bqc)
 
-Part25 Create a network bootable Linux PXE image to run wipe scripts
+[Part25 Create a network bootable Linux PXE image to run wipe scripts](https://youtu.be/xVrb9LZRX00)
 
 [Part26 Using http to Speed up booting in Grub by 4X](https://www.youtube.com/watch?v=DwdUAAq9GGc)
 
@@ -83,13 +83,13 @@ Part25 Create a network bootable Linux PXE image to run wipe scripts
 
 [Part29 Configure Routing for Linux Server to provide internet services](https://youtu.be/27C-hiwOit4)
 
-Part30 Booting WinPE in Legacy BIOS with iPXE
+[Part30 Booting WinPE in Legacy BIOS with iPXE](https://youtu.be/aWiTSiEoc34)
 
 [Part31 hyper-V Reference Images. Create PXE bootable VM in hyper-V](https://youtu.be/VaGyNHbEq2s)
 
-Part32 Reference Images. Create linux based Hyper-V boot server with DHCP and TFTP
+[Part32Reference Images. Create linux based boot server with DHCP and TFTP for HyperV Clients](https://youtu.be/jYRraId06Xw)
 
-Part33 Create Virtual Machines as Reference machines, capture wim file with DISM from vhdx file
+[Part33 Create Virtual Machines as Reference machines, capture wim file with DISM from vhdx file](https://youtu.be/Hv3zRsTkaIg)
 
 [Part34 Sanitizing the System after Imaging - post install script](https://youtu.be/a90bKTtY1kY)
 
