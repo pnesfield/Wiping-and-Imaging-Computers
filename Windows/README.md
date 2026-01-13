@@ -38,3 +38,8 @@ Used in Preview
 ###WindowsVersion
 Find version of the OS on a computer's disk. Looks for a well known Windows file ntoskrnl.exe, gets version and prints result.
 
+### GetDrivers.ps1
+
+Powershell scripts to get drivers in the Windows environment to load into WinPE. GetDrivers2.ps1 only gets signed drivers, since unsigned drivers cause problems.
+
+[Part5 Add Drivers to WinPE boot.wim using DISM](https://www.youtube.com/watch?v=bGDtoFNLBFU)
